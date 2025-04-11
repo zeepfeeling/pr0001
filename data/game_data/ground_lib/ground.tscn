@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://cdbuq2htc8b5h"]
+
+[ext_resource type="Texture2D" uid="uid://b6ijgemxu4eh1" path="res://data/terrain/1024_Mat_025_grass/1024_Texture/025_basecolor_1k.png" id="1_rbjel"]
+[ext_resource type="Material" uid="uid://dru5uanpn4fnf" path="res://data/game_data/mat_lib/ground_mat.tres" id="2_adloc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ifrw1"]
+albedo_texture = ExtResource("1_rbjel")
+
+[sub_resource type="BoxMesh" id="BoxMesh_0f0pf"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_0f0pf"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[node name="ground" type="Node3D"]
+
+[node name="ground_block" type="MeshInstance3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 0.1, 0, 0, 0, 4, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_ifrw1")
+mesh = SubResource("BoxMesh_0f0pf")
+surface_material_override/0 = ExtResource("2_adloc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ground_block"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_block/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_0f0pf")
