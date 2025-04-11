@@ -2,7 +2,7 @@ using Godot;
 using System;
 
 namespace Project{
-	public class CharacterStats : Node3D
+	public partial class CharacterStats : Node
 	{
 		// 属性最大值
 		public float max_val_health = 100f;
@@ -51,6 +51,11 @@ namespace Project{
 				default:
 					break;
 			}
+		}
+
+		public override void _Ready()
+		{
+			GD.Print("Hello, World from C#!");
 		}
 	}
 }

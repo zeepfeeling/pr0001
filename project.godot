@@ -27,4 +27,4 @@ project/assembly_name="pr0001"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/script-ide/plugin.cfg")
+enabled=PackedStringArray("res://addons/MonoBuildToggler/plugin.cfg", "res://addons/mono_plugin/plugin.cfg", "res://addons/script-ide/plugin.cfg")

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dpjdohdcvww7k" path="res://data/scripts/character/CharacterStats.cs" id="1_5dcko"]
 [ext_resource type="PackedScene" uid="uid://drgem2am7e0do" path="res://data/meshs/test_girl/low_poly_girl .fbx" id="1_vm7sf"]
-[ext_resource type="Script" uid="uid://bylfc65tl0ytn" path="res://data/scripts/character/CharactorMove.cs" id="2_30cdb"]
+[ext_resource type="Script" uid="uid://bylfc65tl0ytn" path="res://data/scripts/character/CharactorControl.cs" id="2_30cdb"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vm7sf"]
 
@@ -13,6 +13,12 @@ script = ExtResource("1_5dcko")
 script = ExtResource("2_30cdb")
 
 [node name="low_poly_girl" parent="charactorMoveNode" instance=ExtResource("1_vm7sf")]
+
+[node name="cameraNode" type="Node3D" parent="charactorMoveNode"]
+
+[node name="CameraFocus" type="Camera3D" parent="charactorMoveNode/cameraNode"]
+transform = Transform3D(-1, 0, -8.74228e-08, -6.18172e-08, 0.707107, 0.707107, 6.18172e-08, 0.707107, -0.707107, 0, 4.92136, -4.40204)
+current = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.801051, 0)

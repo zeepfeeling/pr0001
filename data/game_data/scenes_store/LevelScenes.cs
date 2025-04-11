@@ -6,4 +6,8 @@ public partial class LevelScenes : Node3D
     public override void _Ready(){
 
     }
+
+    private void generateCharacter(){
+        
+    }
 }
